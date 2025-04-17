@@ -40,6 +40,87 @@
         position: relative;
         z-index: 2;
       }
+
+      .dark-mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .dark-mode-toggle:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      
+      /* Dark Mode Styles */
+      body.dark-mode {
+        background-color: #121212;
+        color: #f5f5f5;
+      }
+      
+      body.dark-mode .navbar {
+        background-color: #1a1a1a !important;
+      }
+      
+      body.dark-mode .section:not(.section-dark) {
+        background-color: #121212;
+        color: #f5f5f5;
+      }
+      
+      body.dark-mode .section-dark {
+        background-color: #1a1a1a;
+      }
+      
+      body.dark-mode .card {
+        background-color: #1a1a1a;
+        color: #f5f5f5;
+        border-color: #333;
+      }
+      
+      body.dark-mode .form-control {
+        background-color: #333;
+        border-color: #444;
+        color: #f5f5f5;
+      }
+      
+      body.dark-mode .btn-outline {
+        border-color: #f5f5f5;
+        color: #f5f5f5;
+      }
+      
+      body.dark-mode footer {
+        background-color: #1a1a1a;
+        color: #f5f5f5;
+      }
+      
+      body.dark-mode .footer-links a {
+        color: #ccc;
+      }
+      
+      body.dark-mode .footer-links a:hover {
+        color: #fff;
+      }
+      
+      body.dark-mode .process-step {
+        background-color: #1a1a1a;
+        border-color: #333;
+      }
+      
+      body.dark-mode .contact-info {
+        background-color: #1a1a1a;
+      }
+      body.dark-mode .form-control::placeholder { color: #f5f5f5;}
     </style>
   </head>
   <body>
@@ -56,7 +137,12 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
+
           <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+          <i class="fas fa-moon"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
@@ -382,6 +468,93 @@
         </div>
       </div>
     </section>
+
+    <!-- FAQ Section -->
+<section id="faq" class="section">
+  <div class="container">
+    <h2 class="section-title  mb-5">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseOne"
+            aria-expanded="true"
+            aria-controls="faqCollapseOne"
+          >
+            What is AURA's return policy?
+          </button>
+        </h2>
+        <div
+          id="faqCollapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="faqHeadingOne"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            We offer a 30-day return policy for all unused and unworn items with
+            the original tags attached. For more details, visit our return
+            policy page.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseTwo"
+            aria-expanded="false"
+            aria-controls="faqCollapseTwo"
+          >
+            Do you offer international shipping?
+          </button>
+        </h2>
+        <div
+          id="faqCollapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="faqHeadingTwo"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Yes, we ship internationally. Shipping costs and delivery times
+            vary depending on the destination. Check our shipping page for more
+            information.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeadingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faqCollapseThree"
+            aria-expanded="false"
+            aria-controls="faqCollapseThree"
+          >
+            How can I track my order?
+          </button>
+        </h2>
+        <div
+          id="faqCollapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="faqHeadingThree"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Once your order is shipped, you will receive a tracking number via
+            email. Use this number to track your order on our website or the
+            courier's tracking page.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
