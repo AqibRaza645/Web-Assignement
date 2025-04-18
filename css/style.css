@@ -1,4 +1,4 @@
-/* Aqib raza*/
+
 :root {
   --primary-color: #111111;
   --secondary-color: #f8f8f8;
@@ -80,7 +80,7 @@ body {
 .btn-primary {
   background-color: var(--accent-color);
   border: none;
-  border-radius: 0;
+  border-radius: 5px solid;
   padding: 12px 30px;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -134,10 +134,13 @@ body {
 }
 
 .card {
+  width: 100%;
   border: none;
   border-radius: 0;
   overflow: hidden;
   transition: all 0.3s ease;
+  object-fit: contain;
+
 }
 
 .card:hover {
@@ -146,7 +149,8 @@ body {
 }
 
 .card-img-top {
-  height: 300px;
+  height: auto;
+  max-width: 100%;
   object-fit: cover;
 }
 
@@ -370,7 +374,7 @@ footer {
 }
 
 .form-control {
-  background-color: var(--secondary-color);
+  background-color: rgb(207, 207, 207);
   border: none;
   border-radius: 0;
   padding: 15px;
