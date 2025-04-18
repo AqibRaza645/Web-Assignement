@@ -1,0 +1,24 @@
+.custom-icon {
+  background-image: none !important;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 5px;
+
+  margin-right: 8px;
+}
+
+.custom-text {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.carousel-control-next-icon.custom-icon {
+  transform: rotate(-45deg);
+}
+.carousel-control-prev-icon.custom-icon {
+  transform: rotate(135deg);
+}
