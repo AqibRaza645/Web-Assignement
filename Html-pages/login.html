@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | AURA Premium Clothing Brand</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      
+      .login-container {
+        color:#000;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+      }
+      
+      .login-card {
+        max-width: 500px;
+        width: 100%;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+      
+      .login-logo {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      
+      .login-logo a {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #000;
+        text-decoration: none;
+      }
+      
+      .login-form .form-control {
+        padding: 0.8rem 1.2rem;
+        margin-bottom: 1.5rem;
+        border-radius: 5px;
+      }
+      
+      .login-form .btn-primary {
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 1rem;
+      }
+      
+      .social-login {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+      
+      .social-login a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 10px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .social-login .facebook {
+        background-color: #3b5998;
+      }
+      
+      .social-login .google {
+        background-color: #db4437;
+      }
+      
+      .social-login .twitter {
+        background-color: #1da1f2;
+      }
+      
+      .login-footer {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      
+      .login-footer a {
+        color: #000;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      
+      .login-footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Dark mode toggle button */
+    .dark-mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dark-mode-toggle:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">AURA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="collectionsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Collections
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+                <li>
+                  <a class="dropdown-item" href="men'scollection.html"
+                    >Men's Collection</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="women'scollection.html"
+                    >Women's Collection</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./index.html#accessories">Accessories</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#sustainability">Sustainability</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+      <i class="fas fa-moon"></i>
+  </button>
+
+    <!-- Login Section -->
+    <section class="login-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="login-card">
+              <div class="login-logo">
+                <a href="../index.html">AURA</a>
+              </div>
+              <h3 class="text-center mb-4">Welcome Back</h3>
+              <form class="login-form">
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email Address"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="rememberMe"
+                    />
+                    <label class="form-check-label" for="rememberMe">
+                      Remember me
+                    </label>
+                  </div>
+                  <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+              </form>
+              
+              <div class="mt-4 text-center">
+                <p>Or login with</p>
+                <div class="social-login">
+                  <a href="#" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="google">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a href="#" class="twitter">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <div class="login-footer">
+                <p>
+                  Don't have an account?
+                  <a href="signup.html">Sign Up</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row copyright text-center">
+          <div class="col-12">
+            <p>&copy; 2025 AURA. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/script.js"></script>
+    <!-- Add this script just before the closing body tag -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.querySelector('form'); // Adjust this selector to match your login form
+    
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const email = document.querySelector('input[type="email"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+      const rememberMe = document.getElementById('remember') ? document.getElementById('remember').checked : false;
+      
+      // Get stored users
+      let users = [];
+      if (localStorage.getItem('aura_users')) {
+        users = JSON.parse(localStorage.getItem('aura_users'));
+      }
+      
+      // Find user with matching email
+      const user = users.find(u => u.email === email);
+      
+      if (!user) {
+        alert("No account found with this email. Please sign up first.");
+        return;
+      }
+      
+      // Check password
+      if (user.password !== password) {
+        alert("Incorrect password. Please try again.");
+        return;
+      }
+      
+      // Login successful
+      if (rememberMe) {
+        localStorage.setItem('aura_logged_in_user', JSON.stringify({
+          id: email,
+          name: `${user.firstName} ${user.lastName}`,
+          email: user.email
+        }));
+      } else {
+        sessionStorage.setItem('aura_logged_in_user', JSON.stringify({
+          id: email,
+          name: `${user.firstName} ${user.lastName}`,
+          email: user.email
+        }));
+      }
+      
+      // Show success message
+      alert(`Welcome back, ${user.firstName}!`);
+      
+      // Redirect to home page
+      window.location.href = "index.html";
+    });
+  });
+</script>
+
+  </body>
+</html>
