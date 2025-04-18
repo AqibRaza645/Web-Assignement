@@ -13,17 +13,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/slider.css" />
+    <!--<link rel="stylesheet" href="../css/accordion.css" />-->
     <style>
       /* Added inline style for background image */
       #home {
-        background-image: url('../Image/pexels-lum3n-44775-322207.jpg');
+        background-image: url("../Image/pexels-lum3n-44775-322207.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
         min-height: 100vh;
       }
-      
+
       /* Ensure the overlay works properly with the background image */
       .hero-overlay {
         position: absolute;
@@ -34,93 +36,96 @@
         background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
         z-index: 1;
       }
-      
+
       /* Ensure content displays above the overlay */
       .hero-content {
         position: relative;
         z-index: 2;
       }
 
-      .dark-mode-toggle {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
+      .card {
+        height: 500px; /* taller card */
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .card-img-top {
+        height: 450px; /* adjust as needed */
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .modal-content {
+        border-radius: 0;
         border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
+      }
+
+      .modal-header {
+        border-bottom: 2px solid var(--accent-color);
+      }
+
+      .modal-body {
+        padding: 2rem;
+      }
+
+      .btn-close:focus {
+        box-shadow: none;
+      }
+
+      .form-select,
+      .form-control {
+        border-radius: 0;
+      }
+
+      .offcanvas {
+        width: 350px;
+      }
+
+      .cart-item {
         display: flex;
         align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
       }
-      
-      .dark-mode-toggle:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+
+      .cart-item-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-right: 1rem;
       }
-      
-      /* Dark Mode Styles */
-      body.dark-mode {
-        background-color: #121212;
-        color: #f5f5f5;
+
+      .cart-item-details {
+        flex: 1;
       }
-      
-      body.dark-mode .navbar {
-        background-color: #1a1a1a !important;
+
+      .cart-item-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
       }
-      
-      body.dark-mode .section:not(.section-dark) {
-        background-color: #121212;
-        color: #f5f5f5;
+
+      .cart-item-price {
+        color: var(--accent-color);
+        font-weight: 600;
       }
-      
-      body.dark-mode .section-dark {
-        background-color: #1a1a1a;
+
+      .cart-item-quantity {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
-      
-      body.dark-mode .card {
-        background-color: #1a1a1a;
-        color: #f5f5f5;
-        border-color: #333;
+
+      .cart-count {
+        position: relative;
+        top: -8px;
+        right: 5px;
+        font-size: 0.7rem;
       }
-      
-      body.dark-mode .form-control {
-        background-color: #333;
-        border-color: #444;
-        color: #f5f5f5;
+
+      .bg-accent {
+        background-color: var(--accent-color);
       }
-      
-      body.dark-mode .btn-outline {
-        border-color: #f5f5f5;
-        color: #f5f5f5;
-      }
-      
-      body.dark-mode footer {
-        background-color: #1a1a1a;
-        color: #f5f5f5;
-      }
-      
-      body.dark-mode .footer-links a {
-        color: #ccc;
-      }
-      
-      body.dark-mode .footer-links a:hover {
-        color: #fff;
-      }
-      
-      body.dark-mode .process-step {
-        background-color: #1a1a1a;
-        border-color: #333;
-      }
-      
-      body.dark-mode .contact-info {
-        background-color: #1a1a1a;
-      }
-      body.dark-mode .form-control::placeholder { color: #f5f5f5;}
     </style>
   </head>
   <body>
@@ -137,12 +142,7 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-
           <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
-          <i class="fas fa-moon"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
@@ -185,13 +185,20 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link btn btn-outline-light btn-sm px-3 me-2" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link btn btn-light btn-sm px-3 text-dark" href="signup.html">Sign Up</a>
-            </li>
+              <button
+                class="nav-link btn"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#shoppingCart"
+                aria-controls="shoppingCart"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="View your shopping cart"
+              >
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count badge bg-accent">0</span>
+              </button>
             </li>
           </ul>
         </div>
@@ -241,69 +248,153 @@
             </p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <img
-                src="../Image/3.webp"
-                class="card-img-top"
-                alt="Men's Collection"
-              />
-              <div class="product-overlay">
-                <a href="men'scollection.html" class="btn btn-outline mb-3"
-                  >View Collection</a
-                >
+        <div
+          id="featuredCollectionsCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Men's Collection -->
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-md-7 mb-4">
+                  <div class="card">
+                    <img
+                      src="../Image/3.webp"
+                      class="card-img-top"
+                      alt="Men's Collection"
+                    />
+                    <div class="product-overlay">
+                      <a
+                        href="men'scollection.html"
+                        class="btn btn-outline mb-3"
+                        >View Collection</a
+                      >
+                      <button
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productQuickView"
+                        data-product-title="Men's Collection"
+                        data-product-price="Starting from 950 Rs."
+                        data-product-description="Contemporary designs with exceptional comfort for the modern man."
+                        data-product-image="../Image/3.webp"
+                      >
+                        Quick View
+                      </button>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Men's Collection</h5>
+                      <p class="card-text">
+                        Contemporary designs with exceptional comfort for the
+                        modern man.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title">Men's Collection</h5>
-                <p class="card-text">
-                  Contemporary designs with exceptional comfort for the modern
-                  man.
-                </p>
+            </div>
+            <!-- Women's Collection -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-7 mb-4">
+                  <div class="card">
+                    <img
+                      src="../Image/women.webp"
+                      class="card-img-top"
+                      alt="Women's Collection"
+                    />
+                    <div class="product-overlay">
+                      <a
+                        href="women'scollection.html"
+                        class="btn btn-outline mb-3"
+                        >View Collection</a
+                      >
+                      <button
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productQuickView"
+                        data-product-title="Women's Collection"
+                        data-product-price="Starting from 950 Rs."
+                        data-product-description="Bold statements and elegant silhouettes for the fearless woman."
+                        data-product-image="../Image/women.webp"
+                      >
+                        Quick View
+                      </button>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Women's Collection</h5>
+                      <p class="card-text">
+                        Bold statements and elegant silhouettes for the fearless
+                        woman.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Accessories -->
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-7 mb-4">
+                  <div class="card">
+                    <img
+                      src="../Image/accessories.jpg"
+                      class="card-img-top"
+                      alt="Accessories"
+                    />
+                    <div class="product-overlay">
+                      <a href="#accessories" class="btn btn-outline mb-3"
+                        >View Collection</a
+                      >
+                      <button
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productQuickView"
+                        data-product-title="Accessories"
+                        data-product-price="Starting from 950 Rs."
+                        data-product-description="Finishing touches that elevate every outfit to perfection."
+                        data-product-image="../Image/accessories.jpg"
+                      >
+                        Quick View
+                      </button>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Accessories</h5>
+                      <p class="card-text">
+                        Finishing touches that elevate every outfit to
+                        perfection.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <img
-                src="../Image/women.webp"
-                class="card-img-top"
-                alt="Women's Collection"
-              />
-              <div class="product-overlay">
-                <a href="women'scollection.html" class="btn btn-outline mb-3"
-                  >View Collection</a
-                >
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Women's Collection</h5>
-                <p class="card-text">
-                  Bold statements and elegant silhouettes for the fearless
-                  woman.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <img
-                src="../Image/accessories.jpg"
-                class="card-img-top"
-                alt="Accessories"
-              />
-              <div class="product-overlay">
-                <a href="#accessories" class="btn btn-outline mb-3"
-                  >View Collection</a
-                >
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Accessories</h5>
-                <p class="card-text">
-                  Finishing touches that elevate every outfit to perfection.
-                </p>
-              </div>
-            </div>
-          </div>
+          <!-- Carousel Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#featuredCollectionsCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon custom-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="custom-text">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#featuredCollectionsCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon custom-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="custom-text">Next</span>
+          </button>
         </div>
       </div>
     </section>
@@ -477,93 +568,6 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
-<section id="faq" class="section">
-  <div class="container">
-    <h2 class="section-title  mb-5">Frequently Asked Questions</h2>
-    <div class="accordion" id="faqAccordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingOne">
-          <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseOne"
-            aria-expanded="true"
-            aria-controls="faqCollapseOne"
-          >
-            What is AURA's return policy?
-          </button>
-        </h2>
-        <div
-          id="faqCollapseOne"
-          class="accordion-collapse collapse show"
-          aria-labelledby="faqHeadingOne"
-          data-bs-parent="#faqAccordion"
-        >
-          <div class="accordion-body">
-            We offer a 30-day return policy for all unused and unworn items with
-            the original tags attached. For more details, visit our return
-            policy page.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingTwo">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseTwo"
-            aria-expanded="false"
-            aria-controls="faqCollapseTwo"
-          >
-            Do you offer international shipping?
-          </button>
-        </h2>
-        <div
-          id="faqCollapseTwo"
-          class="accordion-collapse collapse"
-          aria-labelledby="faqHeadingTwo"
-          data-bs-parent="#faqAccordion"
-        >
-          <div class="accordion-body">
-            Yes, we ship internationally. Shipping costs and delivery times
-            vary depending on the destination. Check our shipping page for more
-            information.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingThree">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseThree"
-            aria-expanded="false"
-            aria-controls="faqCollapseThree"
-          >
-            How can I track my order?
-          </button>
-        </h2>
-        <div
-          id="faqCollapseThree"
-          class="accordion-collapse collapse"
-          aria-labelledby="faqHeadingThree"
-          data-bs-parent="#faqAccordion"
-        >
-          <div class="accordion-body">
-            Once your order is shipped, you will receive a tracking number via
-            email. Use this number to track your order on our website or the
-            courier's tracking page.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
     <!-- Contact Section -->
     <section id="contact" class="section">
       <div class="container">
@@ -651,16 +655,148 @@
                 </div>
               </div>
               <div class="social-icons mt-4">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a
+                  href="#"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Follow us on Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Follow us on Twitter"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Follow us on Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Follow us on Pinterest"
+                >
+                  <i class="fab fa-pinterest"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!--
+    
+    <section class="section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-6">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p>
+              Find answers to common questions about our products and services.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Shipping & Delivery
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We offer worldwide shipping. Standard delivery takes 3-5
+                    business days within Pakistan. International shipping may
+                    take 7-14 business days depending on the location.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Returns & Exchanges
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We accept returns within 30 days of purchase. Items must be
+                    unworn and in original condition with tags attached.
+                    Exchanges can be processed online or in our retail stores.
+                  </div>
+                </div>
+              </div>
+
+             
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Care Instructions
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    To ensure longevity of your garments, follow the care label
+                    instructions. Most items can be machine washed cold and
+                    tumble dried low. Premium items may require dry cleaning.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
 
     <!-- Footer -->
     <footer>
@@ -674,10 +810,38 @@
               future.
             </p>
             <div class="social-icons mt-4">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a
+                href="#"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Follow us on Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Follow us on Twitter"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Follow us on Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Follow us on Pinterest"
+              >
+                <i class="fab fa-pinterest"></i>
+              </a>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
@@ -719,7 +883,113 @@
       </div>
     </footer>
 
+    <!-- Product Quick View Modal -->
+    <div
+      class="modal fade"
+      id="productQuickView"
+      tabindex="-1"
+      aria-labelledby="productQuickViewLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productQuickViewLabel">
+              Product Quick View
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img
+                  id="modalProductImage"
+                  src=""
+                  alt="Product Image"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-md-6">
+                <h4 id="modalProductTitle"></h4>
+                <p id="modalProductDescription" class="mb-3"></p>
+                <p class="text-danger fw-bold" id="modalProductPrice"></p>
+                <div class="mb-3">
+                  <label
+                    class="form-label"
+                    data-bs-toggle="popover"
+                    data-bs-trigger="hover"
+                    data-bs-placement="top"
+                    title="Size Guide"
+                    data-bs-content="Small: 36-38, Medium: 40-42, Large: 44-46, X-Large: 48-50"
+                  >
+                    Size:
+                  </label>
+                  <select class="form-select">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                    <option>X-Large</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Quantity:</label>
+                  <input type="number" class="form-control" value="1" min="1" />
+                </div>
+                <button class="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shopping Cart Offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="shoppingCart"
+      aria-labelledby="shoppingCartLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="shoppingCartLabel">Shopping Cart</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="cartItems" class="mb-4">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary">
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal:</span>
+            <span id="cartSubtotal">0.00 Rs.</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span>Shipping:</span>
+            <span>150.00 Rs.</span>
+          </div>
+          <div class="d-flex justify-content-between mb-4 fw-bold">
+            <span>Total:</span>
+            <span id="cartTotal">0.00 Rs.</span>
+          </div>
+          <button class="btn btn-primary w-100">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="../javascript/script.js"></script>
+    <script src="../javascript/modalfunctionality.js"></script>
+    <script src="../javascript/cart.js"></script>
+    <script src="../javascript/tooltip.js"></script>
   </body>
 </html>
