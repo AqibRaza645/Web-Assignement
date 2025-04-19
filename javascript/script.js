@@ -1,4 +1,3 @@
-
 // Navbar scroll effect
 window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
@@ -22,35 +21,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: target.offsetTop - 70,
                 behavior: 'smooth'
             });
-        }
-    });
-});
-
-//Dark mode js
-document.addEventListener('DOMContentLoaded', function () {
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    // Check for saved dark mode preference
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-    // Apply dark mode if saved preference exists
-    if (isDarkMode) {
-        body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-
-    // Toggle dark mode on button click
-    darkModeToggle.addEventListener('click', function () {
-        body.classList.toggle('dark-mode');
-
-        // Update icon based on current mode
-        if (body.classList.contains('dark-mode')) {
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('darkMode', 'true');
-        } else {
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem('darkMode', 'false');
         }
     });
 });

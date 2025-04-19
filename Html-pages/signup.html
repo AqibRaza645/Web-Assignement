@@ -13,97 +13,21 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/signup.css" />
     <style>
-      body {
-        background-color: #f8f9fa;
-      }
-      
+      /* Add custom styling to center the signup card properly */
       .signup-container {
-        color: black;
-        min-height: 100vh;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
         padding: 2rem 0;
       }
       
       .signup-card {
-        max-width: 600px;
+        margin: 0 auto;
         width: 100%;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-      }
-      
-      .signup-logo {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      
-      .signup-logo a {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #000;
-        text-decoration: none;
-      }
-      
-      .signup-form .form-control {
-        padding: 0.8rem 1.2rem;
-        margin-bottom: 1.5rem;
-        border-radius: 5px;
-      }
-      
-      .signup-form .btn-primary {
-        width: 100%;
-        padding: 0.8rem;
-        margin-top: 1rem;
-      }
-      
-      .social-signup {
-        display: flex;
-        justify-content: center;
-        margin-top: 1.5rem;
-      }
-      
-      .social-signup a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin: 0 10px;
-        color: #fff;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-      
-      .social-signup .facebook {
-        background-color: #3b5998;
-      }
-      
-      .social-signup .google {
-        background-color: #db4437;
-      }
-      
-      .social-signup .twitter {
-        background-color: #1da1f2;
-      }
-      
-      .signup-footer {
-        text-align: center;
-        margin-top: 2rem;
-      }
-      
-      .signup-footer a {
-        color: #000;
-        text-decoration: none;
-        font-weight: 600;
-      }
-      
-      .signup-footer a:hover {
-        text-decoration: underline;
       }
     </style>
   </head>
@@ -169,6 +93,11 @@
       </div>
     </nav>
 
+    <!-- Add dark mode toggle button -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+      <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Signup Section -->
     <section class="signup-container">
       <div class="container">
@@ -212,12 +141,34 @@
                 <input
                   type="password"
                   class="form-control"
+                  id="password"
                   placeholder="Password"
                   required
                 />
+                
+                <!-- Password requirements -->
+                <div class="password-requirements">
+                  <div class="requirement" id="length-req">
+                    <i class="fa fa-circle"></i> 8+ characters
+                  </div>
+                  <div class="requirement" id="uppercase-req">
+                    <i class="fa fa-circle"></i> At least one uppercase letter
+                  </div>
+                  <div class="requirement" id="lowercase-req">
+                    <i class="fa fa-circle"></i> At least one lowercase letter
+                  </div>
+                  <div class="requirement" id="number-req">
+                    <i class="fa fa-circle"></i> At least one number
+                  </div>
+                  <div class="requirement" id="special-req">
+                    <i class="fa fa-circle"></i> At least one special character
+                  </div>
+                </div>
+                
                 <input
                   type="password"
                   class="form-control"
+                  id="confirmPassword"
                   placeholder="Confirm Password"
                   required
                 />
@@ -287,5 +238,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="../javascript/script.js"></script>
+    <script src="../javascript/darkMode.js"></script>
+    <script src="../javascript/passwordValidator.js"></script>
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/signup.js"></script>
   </body>
 </html>

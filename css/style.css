@@ -1,16 +1,131 @@
-
 :root {
   --primary-color: #111111;
   --secondary-color: #f8f8f8;
   --accent-color: #ff3e41;
   --text-light: #f8f8f8;
   --text-dark: #222222;
+  --bg-light: #f8f9fa;
+  --bg-dark: #121212;
+  --card-light: #fff;
+  --card-dark: #1e1e1e;
+  --input-light: #fff;
+  --input-dark: #333;
+  --border-light: #ddd;
+  --border-dark: #444;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-dark);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --secondary-color: #333;
+  --text-dark: #f8f8f8;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+body.dark-mode .navbar {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+body.dark-mode .card {
+  background-color: var(--card-dark);
+  color: var(--text-light);
+}
+
+body.dark-mode .section:not(.section-dark) {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+body.dark-mode .form-control {
+  background-color: var(--input-dark);
+  border-color: var(--border-dark);
+  color: var(--text-light);
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode textarea.form-control {
+  color: var(--text-light);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="tel"],
+body.dark-mode input[type="number"],
+body.dark-mode select.form-select {
+  color: var(--text-light);
+}
+
+body.dark-mode .btn-outline {
+  border-color: var(--text-light);
+  color: var(--text-light);
+}
+
+body.dark-mode .btn-outline:hover {
+  background-color: var(--text-light);
+  color: var(--primary-color);
+}
+
+body.dark-mode footer {
+  background-color: #0a0a0a;
+}
+
+body.dark-mode .section-title::after {
+  background-color: var(--accent-color);
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+}
+
+body.dark-mode .dropdown-item {
+  color: var(--text-light);
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: var(--accent-color);
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .navbar {
@@ -36,7 +151,6 @@ body {
 .nav-link:hover {
   color: var(--accent-color) !important;
 }
-
 
 .dropdown-menu {
   background-color: #000; /* or any dark color you had before */
@@ -69,8 +183,6 @@ body {
   background-color: #dc3545; /* same red hover, or whatever you prefer */
   color: white;
 }
-
-
 
 .dropdown-item {
   color: var(--text-light);
@@ -169,7 +281,6 @@ body {
   overflow: hidden;
   transition: all 0.3s ease;
   object-fit: contain;
-
 }
 
 .card:hover {

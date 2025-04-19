@@ -263,3 +263,24 @@
       height: 400px;
     }
   }
+
+  /* Add dark mode styles */
+  body.dark-mode .filter-bar {
+    background-color: var(--card-dark);
+    border-color: var(--border-dark);
+  }
+
+  body.dark-mode .filter-btn {
+    color: var(--text-light);
+  }
+
+  body.dark-mode .product-info {
+    background-color: var(--card-dark);
+    color: var(--text-light);
+  }
+
+  body.dark-mode .form-select {
+    background-color: var(--input-dark);
+    color: var(--text-light);
+    border-color: var(--border-dark);
+  }

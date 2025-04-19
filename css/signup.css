@@ -1,0 +1,155 @@
+body {
+  background-color: var(--bg-light);
+}
+  
+.signup-container {
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+  
+.signup-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-light);
+  transition: all 0.3s ease;
+}
+  
+.signup-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+  
+.signup-logo a {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+  
+.signup-form .form-control {
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .signup-form .form-control {
+  color: var(--text-light);
+  background-color: var(--input-dark);
+  border-color: var(--border-dark);
+}
+
+body.dark-mode .signup-form .form-control::placeholder {
+  color: #aaa;
+}
+  
+.signup-form .btn-primary {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+}
+  
+.social-signup {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+  
+.social-signup a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+  
+.social-signup .facebook {
+  background-color: #3b5998;
+}
+  
+.social-signup .google {
+  background-color: #db4437;
+}
+  
+.social-signup .twitter {
+  background-color: #1da1f2;
+}
+  
+.signup-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+  
+.signup-footer a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+  
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Password strength indicator - improved styles */
+.password-requirements {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+  
+.requirement {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+  
+.requirement i {
+  margin-right: 5px;
+  font-size: 10px;
+  transition: color 0.3s ease;
+}
+  
+.requirement.met {
+  color: #198754;
+}
+
+.requirement.met i {
+  color: #198754;
+}
+  
+.requirement.unmet {
+  color: #dc3545;
+}
+
+.requirement.unmet i {
+  color: #dc3545;
+}
+
+/* Dark mode styles will be inherited from style.css */
+
+body.dark-mode .signup-card {
+  background-color: var(--card-dark);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .signup-logo a,
+body.dark-mode .signup-footer a,
+body.dark-mode .form-check-label {
+  color: var(--text-light);
+}

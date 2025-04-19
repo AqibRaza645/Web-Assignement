@@ -1,0 +1,118 @@
+body {
+  background-color: var(--bg-light);
+}
+  
+.login-container {
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+  
+.login-card {
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-light);
+  transition: all 0.3s ease;
+}
+  
+.login-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+  
+.login-logo a {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+  
+.login-form .form-control {
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .login-form .form-control {
+  color: var(--text-light);
+  background-color: var(--input-dark);
+  border-color: var(--border-dark);
+}
+
+body.dark-mode .login-form .form-control::placeholder {
+  color: #aaa;
+}
+  
+.login-form .btn-primary {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+}
+  
+.social-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+  
+.social-login a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+  
+.social-login .facebook {
+  background-color: #3b5998;
+}
+  
+.social-login .google {
+  background-color: #db4437;
+}
+  
+.social-login .twitter {
+  background-color: #1da1f2;
+}
+  
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+  
+.login-footer a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+  
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode styles will be inherited from style.css */
+
+body.dark-mode .login-card {
+  background-color: var(--card-dark);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .login-logo a,
+body.dark-mode .login-footer a,
+body.dark-mode .form-check-label {
+  color: var(--text-light);
+}
