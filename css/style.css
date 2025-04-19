@@ -97,6 +97,40 @@ body.dark-mode .dropdown-item:hover {
   background-color: var(--accent-color);
 }
 
+/* Enhanced Dark mode styles for FAQ section */
+body.dark-mode .bg-light {
+  background-color: var(--bg-dark) !important;
+}
+
+body.dark-mode .accordion-item {
+  border-color: var(--border-dark);
+  background-color: var(--card-dark);
+}
+
+body.dark-mode .accordion-button {
+  background-color: var(--card-dark);
+  color: var(--text-light);
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+body.dark-mode .accordion-body {
+  background-color: var(--card-dark);
+  color: var(--text-light);
+}
+
+/* Fix accordion icon color in dark mode */
+body.dark-mode .accordion-button::after {
+  filter: invert(1);
+}
+
+body.dark-mode .accordion-button:not(.collapsed)::after {
+  filter: brightness(5);
+}
+
 /* Dark mode toggle button */
 .dark-mode-toggle {
   position: fixed;

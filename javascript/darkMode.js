@@ -18,6 +18,7 @@ function initDarkMode() {
     if (isDarkMode) {
         body.classList.add('dark-mode');
         updateDarkModeIcon(true);
+        updateAccordionStyles(true);
     }
 
     // Toggle dark mode on button click
@@ -29,8 +30,9 @@ function initDarkMode() {
             // Save preference to localStorage
             localStorage.setItem('darkMode', isCurrentlyDark);
             
-            // Update icon
+            // Update icon and accordion
             updateDarkModeIcon(isCurrentlyDark);
+            updateAccordionStyles(isCurrentlyDark);
         });
     }
 }
@@ -45,5 +47,51 @@ function updateDarkModeIcon(isDark) {
     } else {
         darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
         darkModeToggle.setAttribute('aria-label', 'Switch to Dark Mode');
+    }
+}
+
+function updateAccordionStyles(isDark) {
+    // Specifically target FAQ accordion elements
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    const accordionBodies = document.querySelectorAll('.accordion-body');
+    
+    if (isDark) {
+        // Apply dark mode styles to accordion elements
+        accordionItems.forEach(item => {
+            item.style.backgroundColor = 'var(--card-dark)';
+            item.style.borderColor = 'var(--border-dark)';
+        });
+        
+        accordionButtons.forEach(button => {
+            if (!button.classList.contains('collapsed')) {
+                button.style.backgroundColor = 'var(--accent-color)';
+                button.style.color = 'white';
+            } else {
+                button.style.backgroundColor = 'var(--card-dark)';
+                button.style.color = 'var(--text-light)';
+            }
+        });
+        
+        accordionBodies.forEach(body => {
+            body.style.backgroundColor = 'var(--card-dark)';
+            body.style.color = 'var(--text-light)';
+        });
+    } else {
+        // Reset styles for light mode
+        accordionItems.forEach(item => {
+            item.style.backgroundColor = '';
+            item.style.borderColor = '';
+        });
+        
+        accordionButtons.forEach(button => {
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        });
+        
+        accordionBodies.forEach(body => {
+            body.style.backgroundColor = '';
+            body.style.color = '';
+        });
     }
 }
