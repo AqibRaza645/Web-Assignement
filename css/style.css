@@ -37,11 +37,40 @@ body {
   color: var(--accent-color) !important;
 }
 
+
 .dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.9);
-  border: none;
-  border-radius: 0;
+  background-color: #000; /* or any dark color you had before */
+  color: white;           /* optional: ensure text stays readable */
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, padding 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 0.5rem;  /* optional: smooth rounded corners */
 }
+
+.dropdown-menu.showing {
+  max-height: 500px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optional: adjust dropdown items for dark mode */
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #dc3545; /* same red hover, or whatever you prefer */
+  color: white;
+}
+
+
 
 .dropdown-item {
   color: var(--text-light);

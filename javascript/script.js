@@ -55,3 +55,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//collections dropdown menu slider on the naviagation bar
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".dropdown");
+  const toggle = dropdown.querySelector(".dropdown-toggle");
+  const menu = dropdown.querySelector(".dropdown-menu");
+
+  let isOpen = false;
+
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (isOpen) {
+      // Closing
+      menu.classList.remove("showing");
+      setTimeout(() => dropdown.classList.remove("show"), 300); // wait for animation
+    } else {
+      // Opening
+      dropdown.classList.add("show");
+      setTimeout(() => menu.classList.add("showing"), 10); // slight delay for smoothness
+    }
+    isOpen = !isOpen;
+  });
+
+  // Close when clicking outside
+  window.addEventListener("click", function (e) {
+    if (!dropdown.contains(e.target) && isOpen) {
+      menu.classList.remove("showing");
+      setTimeout(() => dropdown.classList.remove("show"), 300);
+      isOpen = false;
+    }
+  });
+});
+
+
+
+
+
