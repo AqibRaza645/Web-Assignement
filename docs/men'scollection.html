@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men's Collection | AURA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/men'scollection.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">AURA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="collectionsDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Collections
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="collectionsDropdown">
+              <li>
+                <a class="dropdown-item active" href="men'scollection.html">Men's Collection</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="women'scollection.html">Women's Collection</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#accessories">Accessories</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#sustainability">Sustainability</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contact</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart"
+              aria-controls="shoppingCart" data-bs-toggle="tooltip" data-bs-placement="bottom"
+              title="View your shopping cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count badge bg-accent">0</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">
+              <i class="fas fa-user"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Collection Banner -->
+  <section class="collection-banner">
+    <div class="collection-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 collection-content">
+          <h1 class="hero-title">Men's Collection</h1>
+          <p class="hero-subtitle">
+            Contemporary designs with exceptional comfort for the modern man.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#products" class="btn btn-primary">Shop Now</a>
+            <a href="#features" class="btn btn-outline">Collection Features</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <button class="filter-btn active">All Products</button>
+          <button class="filter-btn">Shirts</button>
+          <button class="filter-btn">Pants</button>
+          <button class="filter-btn">Jackets</button>
+          <button class="filter-btn">Accessories</button>
+        </div>
+        <div class="col-lg-4 text-end">
+          <select class="form-select d-inline-block w-auto">
+            <option>Sort by: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+  <section id="products" class="section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <h2 class="section-title">2025 Spring/Summer</h2>
+          <p>
+            Our men's collection combines innovative design with sustainable
+            practices to create clothing that not only looks exceptional but
+            also contributes to a more responsible fashion industry.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Product 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-img-container">
+              <img src="../Image/basiccrewnecktshirt.webp" class="product-img" alt="Product" />
+              <div class="product-actions">
+                <a href="#" class="action-btn"><i class="fas fa-heart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">Basic Crew Neck Tshirt</h4>
+              <p>Premium organic cotton with minimal environmental impact</p>
+              <p class="product-price">950 Rs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-img-container">
+              <img src="../Image/redpaintedshirt.webp" class="product-img" alt="Product" />
+              <div class="product-actions">
+                <a href="#" class="action-btn"><i class="fas fa-heart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">Red Painted Miami Shirt</h4>
+              <p>Premium wool blend for exceptional comfort and durability</p>
+              <p class="product-price">1250 Rs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-img-container">
+              <img src="../Image/colorfullshirt.webp" class="product-img" alt="Product" />
+              <div class="product-actions">
+                <a href="#" class="action-btn"><i class="fas fa-heart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">Urban Utility Color Shirt</h4>
+              <p>Water-resistant recycled polyester with modular design</p>
+              <p class="product-price">1950 Rs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-img-container">
+              <img src="../Image/bluesilkshirt.webp" class="product-img" alt="Product" />
+              <div class="product-actions">
+                <a href="#" class="action-btn"><i class="fas fa-heart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">Organic Cotton Blue Shirt</h4>
+              <p>Breathable organic cotton with minimalist details</p>
+              <p class="product-price">750 Rs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-img-container">
+              <img src="../Image/pinkshirt.webp" class="product-img" alt="Product" />
+              <div class="product-actions">
+                <a href="#" class="action-btn"><i class="fas fa-heart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">Slim Fit Selvedge Tea Pink Shirt</h4>
+              <p>Japanese selvedge denim with zero waste production</p>
+              <p class="product-price">1450 Rs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="product-card">
+            <div class="product-img-container">
+              <img src="../Image/blackprintedshirt.webp" class="product-img" alt="Product" />
+              <div class="product-actions">
+                <a href="#" class="action-btn"><i class="fas fa-heart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="action-btn"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">Black Polo Shirt</h4>
+              <p>Luxurious recycled black shirt with ribbed details</p>
+              <p class="product-price">1650 Rs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="row mt-5">
+        <div class="col-12 d-flex justify-content-center">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Features -->
+  <section id="features" class="section section-dark">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <h2 class="section-title">Collection Features</h2>
+          <p>
+            Our commitment to quality and sustainability is evident in every
+            piece we create. Discover what makes our men's collection unique
+            and thoughtfully crafted.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="collection-feature">
+            <div class="feature-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h4>Sustainable Materials</h4>
+            <p>
+              We use organic cotton, recycled polyester, and other
+              eco-friendly materials to minimize our environmental impact.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="collection-feature">
+            <div class="feature-icon">
+              <i class="fas fa-tshirt"></i>
+            </div>
+            <h4>Timeless Design</h4>
+            <p>
+              Our designs transcend seasonal trends, offering you pieces that
+              remain stylish and relevant for years to come.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="collection-feature">
+            <div class="feature-icon">
+              <i class="fas fa-hands"></i>
+            </div>
+            <h4>Ethical Production</h4>
+            <p>
+              Every garment is produced in facilities that ensure fair wages
+              and safe working conditions for all employees.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h3 class="footer-title">AURA</h3>
+          <p>
+            Redefining fashion through innovative design and sustainable
+            practices. Join us in creating a more stylish and responsible
+            future.
+          </p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h3 class="footer-title">Shop</h3>
+          <ul class="footer-links">
+            <li><a href="#">Men's Collection</a></li>
+            <li><a href="#">Women's Collection</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h3 class="footer-title">Information</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Store Locations</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <h3 class="footer-title">Policies</h3>
+          <ul class="footer-links">
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Size Guide</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row copyright text-center">
+        <div class="col-12">
+          <p>&copy; 2025 AURA. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../javascript/script.js"></script>
+  <script src="../javascript/darkMode.js"></script>
+</body>
+
+</html>
