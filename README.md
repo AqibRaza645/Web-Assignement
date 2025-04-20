@@ -22,8 +22,6 @@ A modern, responsive e-commerce website, a premium fashion brand focused on sust
 - Bootstrap 5.3.0
 - Font Awesome 6.4.0
 
-
-
 ## Key Features
 
 1. **Modern UI Elements**:
@@ -67,8 +65,38 @@ A modern, responsive e-commerce website, a premium fashion brand focused on sust
 - Font Awesome Icons
 - Images sourced from project assets
 
+---
 
+**Note**: This project is a demonstration of modern web development practices and responsive design implementation.
 
 ---
 
-**Note**: This project is a demonstration of modern web development practices and responsive design implementation. 
+## Team Contributions
+
+- **Abdul Raheem**:
+  - Designed and implemented the Sign Up and Login pages from scratch.
+  - Developed a custom form validation system using JavaScript, surpassing Bootstrap's default validation.
+  - Built a complete client-side authentication logic.
+  - Fixed multiple issues in the dark mode toggle functionality and made the implementation more stable and responsive.
+
+- **Ahmad Raza**:
+  - Designed and styled the entire dark mode toggle feature.
+  - Developed a fully functional FAQ section with JavaScript-powered dynamic expansion and collapse effects.
+  - Created a detailed slider component for products using HTML, CSS, and JavaScript.
+
+- **Meerab Chaudhary**:
+  - Implemented JavaScript-based scrolling animations across pages for visual enhancement.
+  - Created tabbed interfaces and accordion components to organize content effectively.
+  - Designed and coded the Feedback Form using Bootstrap elements and layout principles.
+  - Authored and formatted the full documentation and report for the assignment.
+
+- **Taimoor Safdar**:
+  - Built a dynamic and animated image/content slider for the collections section using custom JavaScript.
+  - Designed carousel elements and transitions.
+  - Identified and resolved key bugs throughout the website, including issues in dark mode toggling and FAQ behavior.
+
+- **Aqib Raza**:
+  - Deployed and hosted the website on GitHub Pages, configuring all necessary deployment settings.
+  - Resolved branch conflicts and Git versioning problems during collaboration.
+  - Designed and integrated a dynamic card layout that powers the homepage product slider functionality.
+

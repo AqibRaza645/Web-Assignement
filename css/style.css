@@ -102,19 +102,28 @@ body.dark-mode .bg-light {
   background-color: var(--bg-dark) !important;
 }
 
-body.dark-mode .accordion-item {
-  border-color: var(--border-dark);
-  background-color: var(--card-dark);
-}
-
+/* Specific fix for accordion buttons in dark mode */
 body.dark-mode .accordion-button {
   background-color: var(--card-dark);
   color: var(--text-light);
 }
 
+/* Explicitly style collapsed buttons */
+body.dark-mode .accordion-button.collapsed {
+  background-color: var(--card-dark);
+  color: var(--text-light);
+}
+
+/* Style for non-collapsed (active) buttons */
 body.dark-mode .accordion-button:not(.collapsed) {
   background-color: var(--accent-color);
   color: white;
+}
+
+/* Rest of the accordion styles */
+body.dark-mode .accordion-item {
+  border-color: var(--border-dark);
+  background-color: var(--card-dark);
 }
 
 body.dark-mode .accordion-body {
