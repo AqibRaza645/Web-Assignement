@@ -1,286 +1,279 @@
 /* Hero/Banner Section */
 .collection-banner {
-    height: 80vh;
-    background-image: url("../Image/mencollback.webp");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    color: var(--text-light);
-    margin-bottom: 0;
-  }
+  height: 80vh;
+  background-image: url("Image/mencollback.webp");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
 
-  .collection-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-  }
+.collection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
 
-  .collection-content {
-    position: relative;
-    z-index: 2;
-  }
+.collection-content {
+  position: relative;
+  z-index: 2;
+}
 
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* Button Styles */
+
+/* Section Styles */
+
+/* Filter Section */
+.filter-bar {
+  background-color: var(--secondary-color);
+  padding: 20px 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  margin-right: 25px;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.filter-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--accent-color);
+}
+
+.filter-btn:hover::after,
+.filter-btn.active::after {
+  width: 100%;
+}
+
+.form-select {
+  border-radius: 0;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+/* Products Section */
+.product-card {
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+}
+
+.product-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 650px;
+  border-radius: 0;
+  background-color: #f7f7f7;
+}
+
+.product-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.product-actions {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .product-actions {
+  bottom: 0;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  padding: 25px 15px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.product-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.product-price {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  background-color: var(--text-light);
+  color: var(--text-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--text-light);
+}
+
+/* Collection Features */
+.collection-feature {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.collection-feature:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.feature-icon {
+  font-size: 40px;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+}
+
+.collection-feature h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+}
+
+.page-link {
+  color: var(--text-dark);
+  border: 1px solid #ddd;
+  margin: 0 5px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.page-item.active .page-link {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.page-link:hover {
+  color: var(--accent-color);
+  background-color: transparent;
+}
+
+/* Navigation Styles */
+
+/* Footer Styles */
+
+/* Responsive Styles */
+@media (max-width: 991px) {
   .hero-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+    font-size: 3rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-  }
-
-  /* Button Styles */
-  
-
-  /* Section Styles */
-  
-  
-
-  /* Filter Section */
-  .filter-bar {
-    background-color: var(--secondary-color);
-    padding: 20px 0;
-    margin-bottom: 0;
-    border-bottom: 1px solid #eaeaea;
+  .navbar-collapse {
+    background-color: var(--primary-color);
+    padding: 20px;
+    margin-top: 15px;
   }
 
   .filter-btn {
-    background: none;
-    border: none;
-    color: var(--text-dark);
-    margin-right: 25px;
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
-    transition: all 0.3s ease;
-    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2.5rem;
   }
 
-  .filter-btn::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: all 0.3s ease;
-  }
-
-  .filter-btn:hover,
-  .filter-btn.active {
-    color: var(--accent-color);
-  }
-
-  .filter-btn:hover::after,
-  .filter-btn.active::after {
-    width: 100%;
-  }
-
-  .form-select {
-    border-radius: 0;
-    border: 1px solid #ddd;
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-
-  /* Products Section */
-  .product-card {
-    margin-bottom: 50px;
-    transition: all 0.3s ease;
+  .section {
+    padding: 70px 0;
   }
 
   .product-img-container {
-    position: relative;
-    overflow: hidden;
-    height: 650px;
-    border-radius: 0;
-    background-color: #f7f7f7;
+    height: 400px;
   }
+}
 
-  .product-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    transition: all 0.5s ease;
-  }
+/* Add dark mode styles */
+body.dark-mode .filter-bar {
+  background-color: var(--card-dark);
+  border-color: var(--border-dark);
+}
 
-  .product-actions {
-    position: absolute;
-    bottom: -60px;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
+body.dark-mode .filter-btn {
+  color: var(--text-light);
+}
 
-  .product-card:hover .product-actions {
-    bottom: 0;
-  }
+body.dark-mode .product-info {
+  background-color: var(--card-dark);
+  color: var(--text-light);
+}
 
-  .product-card:hover .product-img {
-    transform: scale(1.05);
-  }
-
-  .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  }
-
-  .product-info {
-    padding: 25px 15px;
-    text-align: center;
-    background-color: #fff;
-  }
-
-  .product-title {
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-
-  .product-price {
-    color: var(--accent-color);
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-
-  .action-btn {
-    width: 40px;
-    height: 40px;
-    background-color: var(--text-light);
-    color: var(--text-dark);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 8px;
-    transition: all 0.3s ease;
-  }
-
-  .action-btn:hover {
-    background-color: var(--accent-color);
-    color: var(--text-light);
-  }
-
-  /* Collection Features */
-  .collection-feature {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 30px 20px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .collection-feature:hover {
-    transform: translateY(-10px);
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .feature-icon {
-    font-size: 40px;
-    color: var(--accent-color);
-    margin-bottom: 25px;
-  }
-
-  .collection-feature h4 {
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-  }
-
-  /* Pagination */
-  .pagination {
-    margin-top: 20px;
-  }
-
-  .page-link {
-    color: var(--text-dark);
-    border: 1px solid #ddd;
-    margin: 0 5px;
-    border-radius: 0;
-    transition: all 0.3s ease;
-  }
-
-  .page-item.active .page-link {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-  }
-
-  .page-link:hover {
-    color: var(--accent-color);
-    background-color: transparent;
-  }
-
-  /* Navigation Styles */
-  
-  
-
-  
-
-  /* Footer Styles */
-  
-  /* Responsive Styles */
-  @media (max-width: 991px) {
-    .hero-title {
-      font-size: 3rem;
-    }
-
-    .navbar-collapse {
-      background-color: var(--primary-color);
-      padding: 20px;
-      margin-top: 15px;
-    }
-
-    .filter-btn {
-      margin-bottom: 10px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .hero-title {
-      font-size: 2.5rem;
-    }
-
-    .section {
-      padding: 70px 0;
-    }
-
-    .product-img-container {
-      height: 400px;
-    }
-  }
-
-  /* Add dark mode styles */
-  body.dark-mode .filter-bar {
-    background-color: var(--card-dark);
-    border-color: var(--border-dark);
-  }
-
-  body.dark-mode .filter-btn {
-    color: var(--text-light);
-  }
-
-  body.dark-mode .product-info {
-    background-color: var(--card-dark);
-    color: var(--text-light);
-  }
-
-  body.dark-mode .form-select {
-    background-color: var(--input-dark);
-    color: var(--text-light);
-    border-color: var(--border-dark);
-  }
+body.dark-mode .form-select {
+  background-color: var(--input-dark);
+  color: var(--text-light);
+  border-color: var(--border-dark);
+}
