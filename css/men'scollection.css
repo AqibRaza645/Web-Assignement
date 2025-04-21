@@ -1,7 +1,7 @@
 /* Hero/Banner Section */
 .collection-banner {
   height: 80vh;
-  background-image: url("Image/mencollback.webp");
+  background-image: url("/Web-Assignement/Image/mencollback.webp");
   background-size: cover;
   background-position: center;
   position: relative;
